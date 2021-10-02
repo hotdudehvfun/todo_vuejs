@@ -1,0 +1,63 @@
+canvas
+{
+    z-index: 10;
+}
+
+.extra-animate-spin
+{
+    animation: extra-spin 2s linear infinite
+}
+
+@keyframes extra-spin
+{
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  background:#11182710;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: #1a1a1a;
+}
+
+
+.hover\:scale-1\.2
+{
+  transition: 0.3s all;
+}
+.hover\:scale-1\.2:hover
+{
+  transform: scale(1.2);
+}
+
+
+
+.animate-scale
+{
+  transition: 0.5s all;
+  animation: extra-scale 0.2s linear
+}
+@keyframes extra-scale
+{
+  to
+  {
+    transform: scale(1.3);
+  }  
+}
+
+.w-3\/2px
+{
+  width: 1.5px;
+}
+
+
+.rainbow
+{
+  background: linear-gradient(90deg, #3b82f6,#f59e0b,#ef4444,#8b5cf6,#10b981)
+}
