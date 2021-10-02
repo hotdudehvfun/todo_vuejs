@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+
+<head>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' ">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint App</title>
+  <link rel="stylesheet" href="./styles/wind.css">
+  </link>
+  <link rel="stylesheet" href="./styles/extra.css">
+  </link>
+</head>
+
+<body class="w-full h-full overflow-hidden select-none">
+
+  <main id='app'>
+
+    <menu_tabs></menu_tabs>
+
+    <div id='canvas_parent' class="shadow-lg border-2 border-gray-500">
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- toast -->
+  <div id='toast' class="flex items-center absolute p-4 bg-gray-800 shadow-lg rounded-full text-yellow-500 left-1/2 -top-20 cursor-pointer gap-4 transform -translate-x-1/2 transition-all duration-500 linear">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6" viewBox="0 0 16 16" id="exclamation-triangle-fill"><path d="M8.982 1.566a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 01-1.1 0L7.1 5.995A.905.905 0 018 5zm.002 6a1 1 0 110 2 1 1 0 010-2z"></path></svg>
+    <span id="toast_msg" class="text-red-500">I am a toast</span>
+  </div>
+
+  <script src="./scripts/vue.js"></script>
+  <script src="./scripts//components/file_tab.js"></script>
+  
+  <script src="./scripts//components/color_pciker.js"></script>
+  <script src="./scripts//components/home_tab.js"></script>
+
+  <script src="./scripts//components/view_tab.js"></script>
+  <script src="./scripts//components/help_tab.js"></script>
+  <script src="./scripts//components/menu_tabs.js"></script>
+  <script src="./scripts/app.js"></script>
+  
+  
+  <script src="./scripts/p5.js"></script>
+  <script src="./scripts/paint_engine.js"></script>
+</body>
+</html>
