@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
   <link rel="stylesheet" href="./css/tailwind.css">
   </link>
   <link rel="stylesheet" href="./css/extra.css">
@@ -16,14 +17,111 @@
 </head>
 
 <body class="w-full h-full overflow-hidden select-none">
+  
+  <main id='app' class="h-full w-full">
+    <div class="flex flex-col h-full">
+      <!-- title of list -->
+      <list_title v-bind:text="title" v-bind:icon="icon"></list_title>
+      
+      <!-- page container -->
+      <div class="flex h-full overflow-x-hidden">
+        
+        <!-- show tags -->
+        <div
+        :class="[tags_holder_translate_class,tags_holder_scale_class]" 
+        class='h-full w-full flex-shrink-0 transition-all duration-500 transform-gpu'>
+          <tags
+            v-if="view_what=='tags'"
+            v-bind:tags='tag_array'></tags>
+        </div>
+      
+        <!-- show tasks -->
+        <div
+        :class="[tasks_holder_translate_class]" 
+        class=' h-full w-full flex-shrink-0 transition-all duration-500 transform-gpu'>
+          <tasks
+            v-if="view_what=='tasks'"
+            v-bind:filter_tag='tag_in_focus'
+            v-bind:task_array='task_array'>
+          </tasks>
+        </div>
+      </div>
+      
+      
 
-  <main id='app'>
+      <!-- bottom buttons -->
+      <div class="flex p-4 justify-between">
+        <span 
+        v-if="view_what=='tasks'"
+        v-on:click="toggle_add_task_popup"
+        class="cursor-pointer bg-green-50 rounded-full p-2 text-green-500 bold">Add Task</span>
+        
+        <span 
+        v-if="view_what=='tasks' && selected_tasks.length>0"
+        v-on:click="show_handle_selected_tasks_popup=true"
+        class="cursor-pointer bg-red-50 rounded-full p-2 text-red-500 bold">Selected({{selected_tasks.length}})</span>
+        
+        
+        <span 
+        v-if="view_what=='tags'"
+        v-on:click="show_add_new_tag_popup=!show_add_new_tag_popup" class="cursor-pointer bg-purple-50 rounded-full p-2 text-purple-500 bold">+ New List</span>
+        
+        <span 
+        v-if="view_what=='tasks'"
+        v-on:click="handle_back_button"
+        class="cursor-pointer bg-purple-50 rounded-full p-2 text-purple-500 bold material-icons">arrow_back </span>
+        
+
+        <!-- pull data button -->
+        <span 
+        v-if="view_what=='tags'"
+        v-on:click="show_pull_data_popup=!show_pull_data_popup"
+        class="cursor-pointer bg-green-50 rounded-full p-2 text-green-500 bold">
+        Pull Online Lists
+        </span>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <!-- add tag popup  -->
+    <add_new_tag_popup 
+    v-bind:visible='show_add_new_tag_popup'
+    ></add_new_tag_popup>
     
 
-    <list_title title="My Lists"></list_title>
+    <!-- add task popup  -->
+    <add_new_task_popup
+    v-bind:visible='show_add_new_task_popup'
+    ></add_new_task_popup>
+
+
+    <!-- selected lists popup action -->
+    <handle_selected_lists_popup v-bind:visible='show_handle_selected_tasks_popup'>
+    </handle_selected_lists_popup>
+
+
+    <!-- pull data from online popup  -->
+    <pull_data_popup
+    v-bind:visible='show_pull_data_popup'
+    ></pull_data_popup>
+    
+
+      
+
+
+
+
+
     
   </main>
 
+      
 
 
 
@@ -44,16 +142,31 @@
 
 
 
-
-  <!-- toast -->
+  <!-- toast
   <div id='toast' class="flex items-center absolute p-4 bg-gray-800 shadow-lg rounded-full text-yellow-500 left-1/2 -top-20 cursor-pointer gap-4 transform -translate-x-1/2 transition-all duration-500 linear">
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6" viewBox="0 0 16 16" id="exclamation-triangle-fill"><path d="M8.982 1.566a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 01-1.1 0L7.1 5.995A.905.905 0 018 5zm.002 6a1 1 0 110 2 1 1 0 010-2z"></path></svg>
     <span id="toast_msg" class="text-red-500">I am a toast</span>
-  </div>
+  </div> -->
 
   <script src="./scripts/vue.js"></script>
-  <script src="./scripts/components/header.js"></script>
-    <script src="./scripts/app.js"></script>
+  <script src="./scripts/components/list_title.js"></script>
+  <script src="./scripts/components/list_icon_picker.js"></script>
+  <script src="./scripts/components/handle_selected_lists_popup.js"></script>
+  <script src="./scripts/components/add_new_tag_popup.js"></script>
+  <script src="./scripts/components/add_new_task_popup.js"></script>
+  <script src="./scripts/components/pull_data_popup.js"></script>
+  
+  
+  
+  <script src="./scripts/components/color_picker.js"></script>
+  
+  
+  
+  
+  <script src="./scripts/components/tasks.js"></script>
+  <script src="./scripts/components/tags.js"></script>
+  
+  <script src="./scripts/app.js"></script>
 
 
 </body>

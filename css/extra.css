@@ -61,3 +61,32 @@ canvas
 {
   background: linear-gradient(90deg, #3b82f6,#f59e0b,#ef4444,#8b5cf6,#10b981)
 }
+
+
+
+/* 5% */
+.ml-5\%
+{
+  margin-left:5%;
+}
+
+/* 15% */
+.ml-15\%
+{
+  margin-left:15%;
+}
+
+
+/* 90% */
+.w-90\%
+{
+  width:90%;
+}
+
+.list-icon-container svg
+{
+  flex:none;
+  width:4rem;
+}
+
+

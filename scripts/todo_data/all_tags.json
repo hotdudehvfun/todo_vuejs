@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Ancient History",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349360573
+    },
+    {
+        "title": "Medieval History",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349370573
+    },
+    {
+        "title": "Modern History",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349380573
+    },
+    {
+        "title": "Biology",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349390573
+    },
+    {
+        "title": "Chemistry",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349400573
+    },
+    {
+        "title": "Environment",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349410573
+    },
+    {
+        "title": "Geography",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349420573
+    },
+    {
+        "title": "Physics",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349430573
+    },
+    {
+        "title": "Polity",
+        "theme": "blue",
+        "icon": "book",
+        "created_on": 1635349440573
+    }
+]
