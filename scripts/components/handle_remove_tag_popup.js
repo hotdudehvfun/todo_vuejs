@@ -13,7 +13,7 @@ Vue.component('handle_remove_tag_popup',
         {
             this.$parent.show_handle_remove_tag_popup = false;
         },
-        delete:function()
+        delete_list:function()
         {
             console.log("delete",this.$parent.tag_in_focus)
         },
@@ -34,7 +34,7 @@ Vue.component('handle_remove_tag_popup',
             
             <div class="flex flex-col p-2 gap-2">
                 <span
-                v-on:click='delete'
+                v-on:click='delete_list'
                 class="flex cursor-pointer bg-red-50 rounded-full p-2 text-red-500 bold items-center">
                 <span class="material-icons">delete</span>  
                 Yes, Delete List Permanently!
