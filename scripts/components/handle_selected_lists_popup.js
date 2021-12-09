@@ -13,7 +13,21 @@ Vue.component('handle_selected_lists_popup',
         {
             this.$parent.show_handle_selected_tasks_popup = false;
             this.$parent.selected_tasks=[]
-        }
+        },
+        delete_selected_tasks:function()
+        {
+            for (let i = 0; i < this.$parent.selected_tasks.length; i++)
+            {
+                const task = this.$parent.selected_tasks[i];
+                let pos = this.$parent.task_array.indexOf(task)
+                if(pos!=-1)
+                    this.$parent.task_array.splice(pos,1)
+            }
+            this.cancel()
+            this.$parent.handle_back_button()
+            this.$parent.save()
+            console.log("tasks removed")
+        },
     },
     template:`
             <div 
@@ -21,7 +35,7 @@ Vue.component('handle_selected_lists_popup',
             class="w-90% ml-5% absolute flex flex-col bottom-0 bg-gray-100 rounded shadow-xl">
             
             <div class="p-4">
-                What to do with {{this.$parent.selected_tasks.length}} selected task(s)?
+                What to do with {{this.$parent.selected_tasks.length}} selected {{this.$parent.selected_tasks.length>1?tasks:task}}?
             </div>
             
             <div class="flex flex-col p-2 gap-2">
