@@ -19,8 +19,15 @@ Vue.component('handle_remove_tag_popup',
             let pos = this.$parent.tag_array.indexOf(this.$parent.tag_in_focus)
             this.$parent.tag_array.splice(pos,1)
             this.$parent.show_handle_remove_tag_popup = false;
-            //also remove all 
-
+            //also remove all tasks
+            for (let i = 0; i < this.$parent.task_array.length; i++)
+            {
+                const task = this.$parent.task_array[i];
+                let pos=task.tags.indexOf(this.$parent.tag_in_focus.title)
+                if(pos!=-1)
+                    this.$parent.task_array.splice(pos,1)
+            }
+            this.$parent.handle_back_button()
         },
         hide:function()
         {
