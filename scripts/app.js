@@ -125,11 +125,7 @@ var app = new Vue(
       toggle_add_task_popup:function(){
         this.show_add_new_task_popup=!this.show_add_new_task_popup
         console.log(this.show_add_new_task_popup)
-      },
-      remove_tag_with_contents:function()
-      {
-        console.log(this.tag_in_focus)
-      },
+      }
       
     }
 })
