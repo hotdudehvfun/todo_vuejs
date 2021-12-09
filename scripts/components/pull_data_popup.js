@@ -6,12 +6,13 @@ Vue.component('pull_data_popup',
         return {
             tags:[],
             tasks:[],
-            selected_tags:[],  
+            selected_tags:[],
+            raw_path:"https://raw.githubusercontent.com/hotdudehvfun/todo_vuejs/main/scripts/todo_data"
         }
     },
     mounted:function()
     {
-        let tags_url='/scripts/todo_data/all_tags.json'
+        let tags_url=this.raw_path+'/all_tags.json'
         let that=this;
         fetch(tags_url)
             .then(response => response.json())
@@ -20,7 +21,7 @@ Vue.component('pull_data_popup',
                    // console.log(data)
                     that.tags=data
                 });
-        let tasks_url="/scripts/todo_data/tasks/all_tasks.json"
+        let tasks_url=this.raw_path+"/all_tasks.json"
         fetch(tasks_url)
         .then(response => response.json())
         .then((data)=>
