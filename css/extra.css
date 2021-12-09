@@ -89,4 +89,12 @@ canvas
   width:4rem;
 }
 
-
+*{
+  -webkit-user-modify:read-write;
+}
+input,
+textarea,
+[contenteditable] {
+    -webkit-user-select: text;
+    user-select: text;
+}
