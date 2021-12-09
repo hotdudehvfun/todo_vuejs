@@ -89,7 +89,7 @@ canvas
   width:4rem;
 }
 
-[contenteditable]
+#new_task_text
 {
   -webkit-user-modify:read-write;
   -webkit-user-select: text;
