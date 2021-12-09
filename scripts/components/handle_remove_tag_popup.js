@@ -16,6 +16,10 @@ Vue.component('handle_remove_tag_popup',
         delete_list:function()
         {
             console.log("delete",this.$parent.tag_in_focus)
+            let pos = this.$parent.tag_array.indexOf(this.$parent.tag_in_focus)
+            this.$parent.tag_array.splice(pos,1)
+            this.$parent.show_handle_remove_tag_popup = false;
+
         },
         hide:function()
         {
