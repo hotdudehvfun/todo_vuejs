@@ -69,7 +69,7 @@ Vue.component('add_new_task_popup',
             class="w-full p-2 rounded bg-white max-h-64 min-h-8 overflow-y-scroll overflow-x-hidden" 
             placeholder="Task content..."
             v-on:keypress="handle_keypress_on_task_content()"
-            ></div>
+            >Add Here...</div>
         
             <div class="flex justify-between p-2">
                 <span

@@ -19,6 +19,7 @@ Vue.component('handle_remove_tag_popup',
             let pos = this.$parent.tag_array.indexOf(this.$parent.tag_in_focus)
             this.$parent.tag_array.splice(pos,1)
             this.$parent.show_handle_remove_tag_popup = false;
+            //also remove all 
 
         },
         hide:function()
