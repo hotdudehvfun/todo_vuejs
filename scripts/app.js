@@ -125,7 +125,7 @@ var app = new Vue(
         this.show_add_new_task_popup=!this.show_add_new_task_popup
         console.log(this.show_add_new_task_popup)
       },
-      remove_list:function()
+      remove_tag_with_contents:function()
       {
         console.log(this.tag_in_focus)
       },
