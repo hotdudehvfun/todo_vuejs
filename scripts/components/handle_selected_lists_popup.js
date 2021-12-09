@@ -35,7 +35,7 @@ Vue.component('handle_selected_lists_popup',
             class="w-90% ml-5% absolute flex flex-col bottom-0 bg-gray-100 rounded shadow-xl">
             
             <div class="p-4">
-                What to do with {{this.$parent.selected_tasks.length}} selected {{this.$parent.selected_tasks.length>1?tasks:task}}?
+                What to do with {{this.$parent.selected_tasks.length}} selected {{this.$parent.selected_tasks.length>1?'tasks':'task'}}?
             </div>
             
             <div class="flex flex-col p-2 gap-2">
