@@ -28,6 +28,7 @@ Vue.component('handle_remove_tag_popup',
                     this.$parent.task_array.splice(pos,1)
             }
             this.$parent.handle_back_button()
+            this.$parent.save()
         },
         hide:function()
         {
