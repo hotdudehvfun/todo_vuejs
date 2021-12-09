@@ -111,8 +111,15 @@
 
 
     <!-- selected lists popup action -->
-    <handle_selected_lists_popup v-bind:visible='show_handle_selected_tasks_popup'>
+    <handle_selected_lists_popup 
+    v-bind:visible='show_handle_selected_tasks_popup'>
     </handle_selected_lists_popup>
+    
+    <!-- lists delete popup action -->
+    <handle_remove_tag_popup 
+    v-bind:visible='show_handle_remove_tag_popup'>
+    </handle_remove_tag_popup>
+    
 
 
     <!-- pull data from online popup  -->

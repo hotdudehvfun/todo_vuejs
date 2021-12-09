@@ -63,6 +63,7 @@ var app = new Vue(
         new_task_text:'',
         selected_tasks:[],
         show_handle_selected_tasks_popup:false,
+        show_handle_remove_tag_popup:false,
         show_pull_data_popup:false,
         themes:
             {
